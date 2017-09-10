@@ -2,9 +2,13 @@
 
 .phy-upload {
 
-  display:flex;
+  width: 350px;
+  display:inline-flex;
 
   &__name {
+
+    cursor:not-allowed;
+    flex:1;
     background-color:#EEEEEE;
     border: 1px solid #ccc;
     color: #3c3c3c;

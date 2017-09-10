@@ -9,14 +9,14 @@ $btn-primary-text: white;
 $btn-secondary-color: #5BC0DE;
 $btn-secondary-text: white;
 
-@mixin buttonBorderColor($base){
-  border-color:darken($base, 10%);
-}
 
 @mixin buttonVariant($base, $text){
-  @include buttonBorderColor($base);
+  border-color:darken($base, 10%);
   background-color:$base;
   color:$text;
+  &:hover {
+    background-color: darken($base, 8%)
+  }
 }
 
 .btn {
@@ -28,7 +28,7 @@ $btn-secondary-text: white;
   border: 1px solid;
 
   &--important {
-    @include buttonVariant($btn-primary-color, $btn-important-text);
+    @include buttonVariant($btn-important-color, $btn-important-text);
   }
 
   &--primary {
