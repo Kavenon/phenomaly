@@ -1,0 +1,15 @@
+<div class="phy-fizz-buzz">
+  <span class="phy-fizz-buzz__counter">
+    {{counter}}
+  </span>
+  <span class="phy-fizz-buzz__separator">
+    &raquo;
+  </span>
+  <span class="phy-fizz-buzz__result"
+        [ngClass]="['phy-fizz-buzz__result--' + ((result || 'default') | lowercase)]">
+    {{ result || counter}}
+  </span>
+  <button class="phy-fizz-buzz__trigger" (click)="increment()">
+    Increment
+  </button>
+</div>
