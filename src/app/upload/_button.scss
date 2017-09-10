@@ -1,0 +1,43 @@
+$btn-radius: 4px;
+
+$btn-important-color: #D9534F;
+$btn-important-text: white;
+
+$btn-primary-color: #5CB85C;
+$btn-primary-text: white;
+
+$btn-secondary-color: #5BC0DE;
+$btn-secondary-text: white;
+
+@mixin buttonBorderColor($base){
+  border-color:darken($base, 10%);
+}
+
+@mixin buttonVariant($base, $text){
+  @include buttonBorderColor($base);
+  background-color:$base;
+  color:$text;
+}
+
+.btn {
+
+  padding: 6px 12px;
+  border-radius: $btn-radius;
+  cursor:pointer;
+
+  border: 1px solid;
+
+  &--important {
+    @include buttonVariant($btn-primary-color, $btn-important-text);
+  }
+
+  &--primary {
+    @include buttonVariant($btn-primary-color, $btn-primary-text);
+  }
+
+  &--secondary {
+    @include buttonVariant($btn-secondary-color, $btn-secondary-text);
+  }
+
+}
+
