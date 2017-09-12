@@ -1,17 +1,22 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'phy-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.scss']
 })
-export class UploadComponent {
+export class UploadComponent implements OnInit {
 
   file: File;
   filename = '';
+  inputId: string;
   @Input() inputName: string;
 
   constructor() { }
+
+  ngOnInit(): void {
+    this.inputId = `file-upload--${this.inputName}`;
+  }
 
   update($event): void {
 

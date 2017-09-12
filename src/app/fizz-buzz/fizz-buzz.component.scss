@@ -1,3 +1,10 @@
+$border-color: #f3f3f3;
+$bg-color: white;
+
+$fizz-color: #f1c40f;
+$buzz-color: #2980b9;
+$fizz-buzz-color: #2ecc71;
+
 .phy-fizz-buzz {
 
   display:inline-block;
@@ -5,8 +12,8 @@
 
   text-align: center;
 
-  border:1px solid #f3f3f3;
-  background-color:white;
+  border:1px solid $border-color;
+  background-color: $bg-color;
 
   &__counter {
     font-weight:bold;
@@ -16,19 +23,18 @@
     display:block;
     margin-top:15px;
     margin-left:auto;
-
   }
 
   &__result--fizz {
-    color:#f1c40f;
+    color: $fizz-color;
   }
 
   &__result--buzz {
-    color:#2980b9;
+    color: $buzz-color;
   }
 
   &__result--fizzbuzz {
-    color:#2ecc71;
+    color:$fizz-buzz-color;
   }
 
 }

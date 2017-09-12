@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {UploadService} from './upload.service';
+import {FileService} from '../../shared/file.service';
 
 @Component({
   selector: 'phy-upload-summary',
@@ -14,11 +14,11 @@ export class UploadSummaryComponent implements OnChanges {
   imageWidth: number;
   imageHeight: number;
 
-  constructor(private uploadService: UploadService) { }
+  constructor(private fileService: FileService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['file']) {
-      this.isImage = this.uploadService.isImage(this.file);
+      this.isImage = this.fileService.isImage(this.file);
 
       // Todo: refactor
 

@@ -5,9 +5,9 @@ import { AppComponent } from './app.component';
 import {FizzBuzzComponent} from './fizz-buzz/fizz-buzz.component';
 import {FizzBuzzService} from './fizz-buzz/fizz-buzz.service';
 import { UploadComponent } from './upload/upload.component';
-import {UploadSummaryComponent} from './upload/upload-summary.component';
-import {UploadService} from './upload/upload.service';
-import {FileSizePipe} from './upload/file-size.pipe';
+import {UploadSummaryComponent} from './upload/upload-summary/upload-summary.component';
+import {FileService} from './shared/file.service';
+import {FileSizePipe} from './shared/file-size.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {FileSizePipe} from './upload/file-size.pipe';
   ],
   providers: [
     FizzBuzzService,
-    UploadService
+    FileService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,13 +9,15 @@ $btn-primary-text: white;
 $btn-secondary-color: #5BC0DE;
 $btn-secondary-text: white;
 
+$border-darken: 10%;
+$hover-darken: 8%;
 
 @mixin buttonVariant($base, $text){
-  border-color:darken($base, 10%);
+  border-color:darken($base, $border-darken);
   background-color:$base;
   color:$text;
   &:hover {
-    background-color: darken($base, 8%)
+    background-color: darken($base, $hover-darken)
   }
 }
 

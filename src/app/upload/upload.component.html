@@ -3,7 +3,7 @@
   <input type="file"
          class="phy-upload__file"
          (change)="update($event)"
-         id="file-upload--{{inputName}}">
+         id="{{inputId}}">
 
   <input type="text"
          class="phy-upload__name"
@@ -12,13 +12,11 @@
 
   <label
     class="phy-upload__button btn btn--primary"
-    for="file-upload--{{inputName}}">
+    for="{{inputId}}">
     <i class="fa fa-folder-open"></i> Open
   </label>
 
 </div>
 
-<phy-upload-summary
-  *ngIf="file"
-  [file]="file"></phy-upload-summary>
+<phy-upload-summary *ngIf="file" [file]="file"></phy-upload-summary>
 
