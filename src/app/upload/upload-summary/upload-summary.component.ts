@@ -11,7 +11,8 @@ export class UploadSummaryComponent implements OnChanges {
   @Input() file: File;
   isImage: boolean;
 
-  constructor(private fileService: FileService) { }
+  constructor(private fileService: FileService) {
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['file']) {
@@ -19,5 +20,4 @@ export class UploadSummaryComponent implements OnChanges {
     }
   }
 
-``
 }

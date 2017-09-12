@@ -12,7 +12,8 @@ export class UploadComponent implements OnInit {
   inputId: string;
   @Input() inputName: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.inputId = `file-upload--${this.inputName}`;

@@ -5,17 +5,17 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class FileSizePipe implements PipeTransform {
 
-  transform(size: number) {
+  transform(sizeInBytes: number) {
 
-    size /= 1024;
+    sizeInBytes /= 1024;
 
-    if (size < 1024) {
-      return size.toFixed(2) + ' kB';
+    if (sizeInBytes < 1024) {
+      return sizeInBytes.toFixed(2) + ' kB';
     }
 
-    size /= 1024;
+    sizeInBytes /= 1024;
 
-    return size.toFixed(2) + ' MB';
+    return sizeInBytes.toFixed(2) + ' MB';
 
   }
 

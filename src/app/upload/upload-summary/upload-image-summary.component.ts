@@ -1,8 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {ImageService} from '../../shared/image.service';
 
-
-
 @Component({
   selector: 'phy-upload-image-summary',
   templateUrl: './upload-image-summary.component.html'
@@ -21,7 +19,7 @@ export class UploadImageSummaryComponent implements OnChanges {
     this.imageHeight = 0;
   }
 
-  constructor (private imageService: ImageService){
+  constructor(private imageService: ImageService) {
 
   }
 
@@ -29,7 +27,7 @@ export class UploadImageSummaryComponent implements OnChanges {
     if (changes['file']) {
 
       this.clear();
-      this.imageService.fetchImage(this.file)
+      this.imageService.fetchImageSrc(this.file)
         .then((imageSrc) => {
           this.imageSrc = imageSrc;
           return this.imageSrc;

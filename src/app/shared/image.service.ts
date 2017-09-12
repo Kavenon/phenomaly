@@ -4,7 +4,7 @@ import {ImageDimensions} from './image-dimensions';
 @Injectable()
 export class ImageService {
 
-  fetchImage(file): Promise<string> {
+  fetchImageSrc(file): Promise<string> {
 
     return new Promise((resolve => {
       const reader = new FileReader();

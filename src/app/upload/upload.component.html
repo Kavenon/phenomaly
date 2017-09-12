@@ -1,18 +1,10 @@
 <div class="phy-upload">
 
-  <input type="file"
-         class="phy-upload__file"
-         (change)="update($event)"
-         id="{{inputId}}">
+  <input type="file" class="phy-upload__file" (change)="update($event)" id="{{inputId}}">
 
-  <input type="text"
-         class="phy-upload__name"
-         disabled
-         [value]="filename">
+  <input type="text" class="phy-upload__name" disabled [value]="filename">
 
-  <label
-    class="phy-upload__button btn btn--primary"
-    for="{{inputId}}">
+  <label class="phy-upload__button btn btn--primary" for="{{inputId}}">
     <i class="fa fa-folder-open"></i> Open
   </label>
 
