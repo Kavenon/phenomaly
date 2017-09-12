@@ -1,0 +1,33 @@
+<div *ngIf="isImage === false; else image">
+  <table class="phy-upload-summary">
+    <tr>
+      <td>Type</td>
+      <td>{{file.type || 'none'}}</td>
+    </tr>
+    <tr>
+      <td>Size</td>
+      <td>{{file.size | fileSize}}</td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #image>
+  <table class="phy-upload-summary">
+    <tr>
+      <td>Name</td>
+      <td>{{file.name}}</td>
+    </tr>
+    <tr>
+      <td>Dimensions</td>
+      <td>{{imageWidth}}x{{imageHeight}}</td>
+    </tr>
+    <tr>
+      <td>Size</td>
+      <td>{{file.size | fileSize}}</td>
+    </tr>
+    <tr>
+      <td>Preview</td>
+      <td><img [src]="imageSrc" style="max-width:100px;max-height:100px;"/></td>
+    </tr>
+  </table>
+</ng-template>

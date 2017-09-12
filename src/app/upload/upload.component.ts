@@ -7,6 +7,7 @@ import {Component, Input} from '@angular/core';
 })
 export class UploadComponent {
 
+  file: File;
   filename = '';
   @Input() inputName: string;
 
@@ -16,7 +17,8 @@ export class UploadComponent {
 
     const files = $event.target.files;
     if (files && files.length > 0) {
-      this.filename = files[0].name;
+      this.file = files[0];
+      this.filename = this.file.name;
     }
 
   }
