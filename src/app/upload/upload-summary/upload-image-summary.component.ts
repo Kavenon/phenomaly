@@ -1,5 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {ImageService} from '../../shared/image.service';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'phy-upload-image-summary',
@@ -9,7 +10,7 @@ export class UploadImageSummaryComponent implements OnChanges {
 
   @Input() file: File;
 
-  imageSrc = '';
+  imageSrc: SafeResourceUrl;
   imageWidth: number;
   imageHeight: number;
 
@@ -19,7 +20,7 @@ export class UploadImageSummaryComponent implements OnChanges {
     this.imageHeight = 0;
   }
 
-  constructor(private imageService: ImageService) {
+  constructor(private imageService: ImageService, private domSanitizer: DomSanitizer) {
 
   }
 
@@ -29,8 +30,8 @@ export class UploadImageSummaryComponent implements OnChanges {
       this.clear();
       this.imageService.fetchImageSrc(this.file)
         .then((imageSrc) => {
-          this.imageSrc = imageSrc;
-          return this.imageSrc;
+          this.imageSrc = this.domSanitizer.bypassSecurityTrustResourceUrl(imageSrc);
+          return imageSrc;
         })
         .then(this.imageService.fetchImageDimensions)
         .then((imageDimensions) => {
