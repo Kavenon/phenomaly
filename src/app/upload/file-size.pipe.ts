@@ -15,9 +15,7 @@ export class FileSizePipe implements PipeTransform {
 
     size /= 1024;
 
-    if (size < 1024) {
-      return size.toFixed(2) + ' MB';
-    }
+    return size.toFixed(2) + ' MB';
 
   }
 
